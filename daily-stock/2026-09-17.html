@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日股市報告 2026/09/17</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: "Microsoft JhengHei", "Segoe UI", sans-serif; margin: 0; padding: 24px;
+         background: #f5f6f8; color: #222; -webkit-text-size-adjust: 100%; }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  h2 { font-size: 17px; margin: 28px 0 10px; padding-left: 10px; border-left: 4px solid #999; }
+  h2.up { border-color: #d32f2f; }
+  h2.down { border-color: #2e7d32; }
+  .sub { color: #666; font-size: 14px; margin-bottom: 20px; }
+  .card { background: #fff; border-radius: 12px; padding: 16px 18px; box-shadow: 0 1px 4px rgba(0,0,0,.08);
+          margin-bottom: 14px; }
+  .chart-box { position: relative; height: 350px; }
+  .us-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 8px; }
+  .rank { display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center;
+           border-radius: 50%; background: #eee; color: #555; font-size: 13px; font-weight: 700; }
+  .us-label { font-weight: 700; font-size: 16px; }
+  .us-price { font-variant-numeric: tabular-nums; }
+  .us-chg { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .us-vol { color: #888; font-size: 13px; }
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { padding: 6px 8px; border-bottom: 1px solid #eee; text-align: left; white-space: nowrap; }
+  th { color: #888; font-weight: 600; font-size: 12px; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.code { color: #666; font-variant-numeric: tabular-nums; }
+  .pos { color: #d32f2f; }
+  .neg { color: #2e7d32; }
+  .muted { color: #aaa; }
+  .empty { color: #999; font-size: 13px; padding: 6px 0; }
+  .foot { color: #999; font-size: 12px; margin-top: 24px; text-align: center; }
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    h1 { font-size: 19px; }
+    h2 { font-size: 15px; margin-top: 20px; }
+    .card { padding: 12px; border-radius: 10px; }
+    .us-label { font-size: 15px; }
+    table { font-size: 12px; }
+    th, td { padding: 5px 5px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📊 每日股市報告 2026/09/17</h1>
+  <div class="sub">美股：市值 10B↑・成交量前 250・漲跌幅前 10　|　台股：前一交易日收盤與三大法人（外資／投信，單位：張）</div>
+
+  <div class="card">
+    <div class="chart-box"><canvas id="bar"></canvas></div>
+  </div>
+
+  <h2 class="up">🇺🇸 漲幅前 10 與台股供應鏈</h2>
+  
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">1</span>
+        <span class="us-label">FPS Forgent Power(電力設備)</span>
+        <span class="us-price">$34.84</span>
+        <span class="us-chg pos">▲11.10%</span>
+        <span class="us-vol">Vol 20.8M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">1519</td><td class="name">華城</td><td class="num">706.0</td><td class="num"><span class="pos">▲12.0 (1.7%)</span></td><td class="num"><span class="neg">-26</span></td><td class="num"><span class="pos">195</span></td></tr><tr><td class="code">1513</td><td class="name">中興電</td><td class="num">162.5</td><td class="num"><span class="pos">▲0.5 (0.3%)</span></td><td class="num"><span class="pos">184</span></td><td class="num"><span class="neg">-16</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">2</span>
+        <span class="us-label">CRDO Credo(半導體)</span>
+        <span class="us-price">$161.49</span>
+        <span class="us-chg pos">▲7.38%</span>
+        <span class="us-vol">Vol 8.9M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">2330</td><td class="name">台積電</td><td class="num">2,380.0</td><td class="num"><span class="pos">▲2.0 (0.1%)</span></td><td class="num"><span class="neg">-8,745</span></td><td class="num"><span class="pos">166</span></td></tr><tr><td class="code">3665</td><td class="name">貿聯-KY</td><td class="num">1,995.0</td><td class="num"><span class="pos">▲15.0 (0.8%)</span></td><td class="num"><span class="neg">-252</span></td><td class="num"><span class="pos">6</span></td></tr><tr><td class="code">3711</td><td class="name">日月光</td><td class="num">605.0</td><td class="num"><span class="pos">▲13.0 (2.2%)</span></td><td class="num"><span class="pos">2,606</span></td><td class="num"><span class="neg">-1,038</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">3</span>
+        <span class="us-label">COHR 高意(光通訊)</span>
+        <span class="us-price">$289.93</span>
+        <span class="us-chg pos">▲6.92%</span>
+        <span class="us-vol">Vol 7.5M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">3081</td><td class="name">聯亞</td><td class="num">2,805.0</td><td class="num"><span class="pos">▲130.0 (4.9%)</span></td><td class="num"><span class="neg">-1,411</span></td><td class="num"><span class="pos">452</span></td></tr><tr><td class="code">4979</td><td class="name">華星光</td><td class="num">547.0</td><td class="num"><span class="pos">▲38.0 (7.5%)</span></td><td class="num"><span class="pos">226</span></td><td class="num"><span class="neg">-118</span></td></tr><tr><td class="code">3450</td><td class="name">聯鈞</td><td class="num">541.0</td><td class="num"><span class="pos">▲48.5 (9.8%)</span></td><td class="num"><span class="pos">845</span></td><td class="num"><span class="pos">257</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">4</span>
+        <span class="us-label">SPCX SpaceX(太空)</span>
+        <span class="us-price">$150.88</span>
+        <span class="us-chg pos">▲5.15%</span>
+        <span class="us-vol">Vol 108.4M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">3491</td><td class="name">昇達科</td><td class="num">1,440.0</td><td class="num"><span class="pos">▲85.0 (6.3%)</span></td><td class="num"><span class="pos">148</span></td><td class="num"><span class="pos">59</span></td></tr><tr><td class="code">6285</td><td class="name">啟碁</td><td class="num">219.0</td><td class="num"><span class="neg">▼3.0 (1.4%)</span></td><td class="num"><span class="neg">-1,566</span></td><td class="num"><span class="neg">-736</span></td></tr><tr><td class="code">2314</td><td class="name">台揚</td><td class="num">10.5</td><td class="num"><span class="neg">▼0.5 (4.5%)</span></td><td class="num"><span class="pos">0</span></td><td class="num"><span class="pos">0</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">5</span>
+        <span class="us-label">UMC 聯電(半導體)</span>
+        <span class="us-price">$22.53</span>
+        <span class="us-chg pos">▲4.26%</span>
+        <span class="us-vol">Vol 11.2M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">2303</td><td class="name">聯電</td><td class="num">142.0</td><td class="num"><span class="pos">▲3.5 (2.5%)</span></td><td class="num"><span class="pos">6,968</span></td><td class="num"><span class="pos">3,910</span></td></tr><tr><td class="code">6770</td><td class="name">力積電</td><td class="num">69.9</td><td class="num"><span class="pos">▲3.0 (4.5%)</span></td><td class="num"><span class="pos">42,640</span></td><td class="num"><span class="pos">423</span></td></tr><tr><td class="code">2330</td><td class="name">台積電</td><td class="num">2,380.0</td><td class="num"><span class="pos">▲2.0 (0.1%)</span></td><td class="num"><span class="neg">-8,745</span></td><td class="num"><span class="pos">166</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">6</span>
+        <span class="us-label">BE Bloom Energy(燃料電池)</span>
+        <span class="us-price">$270.02</span>
+        <span class="us-chg pos">▲4.11%</span>
+        <span class="us-vol">Vol 13.3M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">8996</td><td class="name">高力</td><td class="num">1,300.0</td><td class="num"><span class="pos">▲80.0 (6.6%)</span></td><td class="num"><span class="pos">290</span></td><td class="num"><span class="neg">-5</span></td></tr><tr><td class="code">6282</td><td class="name">康舒</td><td class="num">42.7</td><td class="num"><span class="pos">▲1.1 (2.6%)</span></td><td class="num"><span class="pos">648</span></td><td class="num"><span class="neg">-57</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">7</span>
+        <span class="us-label">INTC 英特爾(半導體)</span>
+        <span class="us-price">$101.05</span>
+        <span class="us-chg pos">▲4.03%</span>
+        <span class="us-vol">Vol 119.2M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">2330</td><td class="name">台積電</td><td class="num">2,380.0</td><td class="num"><span class="pos">▲2.0 (0.1%)</span></td><td class="num"><span class="neg">-8,745</span></td><td class="num"><span class="pos">166</span></td></tr><tr><td class="code">3711</td><td class="name">日月光</td><td class="num">605.0</td><td class="num"><span class="pos">▲13.0 (2.2%)</span></td><td class="num"><span class="pos">2,606</span></td><td class="num"><span class="neg">-1,038</span></td></tr><tr><td class="code">2357</td><td class="name">華碩</td><td class="num">939.0</td><td class="num"><span class="pos">▲11.0 (1.2%)</span></td><td class="num"><span class="neg">-627</span></td><td class="num"><span class="pos">861</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">8</span>
+        <span class="us-label">DELL 戴爾(大型科技)</span>
+        <span class="us-price">$563.29</span>
+        <span class="us-chg pos">▲3.64%</span>
+        <span class="us-vol">Vol 13.0M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">3231</td><td class="name">緯創</td><td class="num">183.0</td><td class="num"><span class="pos">▲0.5 (0.3%)</span></td><td class="num"><span class="neg">-9,687</span></td><td class="num"><span class="pos">1,993</span></td></tr><tr><td class="code">2382</td><td class="name">廣達</td><td class="num">340.5</td><td class="num"><span class="pos">▲7.5 (2.2%)</span></td><td class="num"><span class="neg">-158</span></td><td class="num"><span class="pos">3,774</span></td></tr><tr><td class="code">2324</td><td class="name">仁寶</td><td class="num">37.3</td><td class="num"><span class="pos">▲0.4 (1.1%)</span></td><td class="num"><span class="neg">-2,775</span></td><td class="num"><span class="neg">-28</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">9</span>
+        <span class="us-label">MRVL 邁威爾(半導體)</span>
+        <span class="us-price">$229.71</span>
+        <span class="us-chg pos">▲3.61%</span>
+        <span class="us-vol">Vol 16.3M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">2330</td><td class="name">台積電</td><td class="num">2,380.0</td><td class="num"><span class="pos">▲2.0 (0.1%)</span></td><td class="num"><span class="neg">-8,745</span></td><td class="num"><span class="pos">166</span></td></tr><tr><td class="code">3711</td><td class="name">日月光</td><td class="num">605.0</td><td class="num"><span class="pos">▲13.0 (2.2%)</span></td><td class="num"><span class="pos">2,606</span></td><td class="num"><span class="neg">-1,038</span></td></tr><tr><td class="code">3443</td><td class="name">創意</td><td class="num">6,170.0</td><td class="num"><span class="pos">▲135.0 (2.2%)</span></td><td class="num"><span class="neg">-15</span></td><td class="num"><span class="pos">31</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">10</span>
+        <span class="us-label">SMCI 超微電腦(大型科技)</span>
+        <span class="us-price">$36.85</span>
+        <span class="us-chg pos">▲3.40%</span>
+        <span class="us-vol">Vol 31.2M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">8210</td><td class="name">勤誠</td><td class="num">883.0</td><td class="num"><span class="pos">▲9.0 (1.0%)</span></td><td class="num"><span class="pos">98</span></td><td class="num"><span class="neg">-243</span></td></tr><tr><td class="code">2059</td><td class="name">川湖</td><td class="num">12,045.0</td><td class="num"><span class="pos">▲330.0 (2.8%)</span></td><td class="num"><span class="neg">-64</span></td><td class="num"><span class="pos">59</span></td></tr><tr><td class="code">3017</td><td class="name">奇鋐</td><td class="num">3,175.0</td><td class="num"><span class="pos">▲60.0 (1.9%)</span></td><td class="num"><span class="neg">-201</span></td><td class="num"><span class="pos">80</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+
+  <h2 class="down">🇺🇸 跌幅前 10 與台股供應鏈</h2>
+  
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">1</span>
+        <span class="us-label">ON 安森美(半導體)</span>
+        <span class="us-price">$66.60</span>
+        <span class="us-chg neg">▼9.02%</span>
+        <span class="us-vol">Vol 18.8M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">2330</td><td class="name">台積電</td><td class="num">2,380.0</td><td class="num"><span class="pos">▲2.0 (0.1%)</span></td><td class="num"><span class="neg">-8,745</span></td><td class="num"><span class="pos">166</span></td></tr><tr><td class="code">3711</td><td class="name">日月光</td><td class="num">605.0</td><td class="num"><span class="pos">▲13.0 (2.2%)</span></td><td class="num"><span class="pos">2,606</span></td><td class="num"><span class="neg">-1,038</span></td></tr><tr><td class="code">2342</td><td class="name">茂矽</td><td class="num">40.5</td><td class="num"><span class="pos">▲2.1 (5.6%)</span></td><td class="num"><span class="pos">1,674</span></td><td class="num"><span class="pos">0</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">2</span>
+        <span class="us-label">FANG</span>
+        <span class="us-price">$194.54</span>
+        <span class="us-chg neg">▼8.03%</span>
+        <span class="us-vol">Vol 15.4M</span>
+      </div><div class="empty">無對應台股供應鏈</div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">3</span>
+        <span class="us-label">CHYM Chime(金融科技)</span>
+        <span class="us-price">$31.25</span>
+        <span class="us-chg neg">▼7.02%</span>
+        <span class="us-vol">Vol 8.2M</span>
+      </div><div class="empty">無對應台股供應鏈</div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">4</span>
+        <span class="us-label">CRCL Circle(加密貨幣)</span>
+        <span class="us-price">$80.45</span>
+        <span class="us-chg neg">▼6.78%</span>
+        <span class="us-vol">Vol 25.7M</span>
+      </div><div class="empty">無對應台股供應鏈</div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">5</span>
+        <span class="us-label">OXY 西方石油(能源)</span>
+        <span class="us-price">$59.36</span>
+        <span class="us-chg neg">▼6.55%</span>
+        <span class="us-vol">Vol 11.5M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">1301</td><td class="name">台塑</td><td class="num">62.4</td><td class="num"><span class="pos">▲0.4 (0.7%)</span></td><td class="num"><span class="neg">-4,954</span></td><td class="num"><span class="pos">0</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">6</span>
+        <span class="us-label">COP 康菲石油(能源)</span>
+        <span class="us-price">$132.54</span>
+        <span class="us-chg neg">▼6.15%</span>
+        <span class="us-vol">Vol 9.0M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">1301</td><td class="name">台塑</td><td class="num">62.4</td><td class="num"><span class="pos">▲0.4 (0.7%)</span></td><td class="num"><span class="neg">-4,954</span></td><td class="num"><span class="pos">0</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">7</span>
+        <span class="us-label">PR Permian(能源)</span>
+        <span class="us-price">$22.95</span>
+        <span class="us-chg neg">▼5.67%</span>
+        <span class="us-vol">Vol 17.5M</span>
+      </div><div class="empty">無對應台股供應鏈</div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">8</span>
+        <span class="us-label">DVN 德文能源(能源)</span>
+        <span class="us-price">$48.44</span>
+        <span class="us-chg neg">▼5.63%</span>
+        <span class="us-vol">Vol 15.0M</span>
+      </div><div class="empty">無對應台股供應鏈</div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">9</span>
+        <span class="us-label">RBLX Roblox(遊戲)</span>
+        <span class="us-price">$47.43</span>
+        <span class="us-chg neg">▼5.59%</span>
+        <span class="us-vol">Vol 9.1M</span>
+      </div>
+      <div class="table-scroll">
+      <table>
+        <thead><tr><th>代碼</th><th>台股</th><th class="num">收盤</th><th class="num">漲跌</th><th class="num">外資(張)</th><th class="num">投信(張)</th></tr></thead>
+        <tbody><tr><td class="code">2376</td><td class="name">技嘉</td><td class="num">350.0</td><td class="num"><span class="pos">▲7.0 (2.0%)</span></td><td class="num"><span class="neg">-1,172</span></td><td class="num"><span class="pos">1,097</span></td></tr><tr><td class="code">2357</td><td class="name">華碩</td><td class="num">939.0</td><td class="num"><span class="pos">▲11.0 (1.2%)</span></td><td class="num"><span class="neg">-627</span></td><td class="num"><span class="pos">861</span></td></tr></tbody>
+      </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="us-head">
+        <span class="rank">10</span>
+        <span class="us-label">HBAN</span>
+        <span class="us-price">$15.82</span>
+        <span class="us-chg neg">▼5.55%</span>
+        <span class="us-vol">Vol 77.5M</span>
+      </div><div class="empty">無對應台股供應鏈</div>
+    </div>
+
+  <div class="foot">資料來源：Yahoo Finance、TWSE／TPEx 三大法人　|　每個交易日 07:00 自動更新</div>
+</div>
+
+<script>
+  const ranks     = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  const gainVals  = [11.1, 7.38, 6.92, 5.15, 4.26, 4.11, 4.03, 3.64, 3.61, 3.4];
+  const lossVals  = [-9.02, -8.03, -7.02, -6.78, -6.55, -6.15, -5.67, -5.63, -5.59, -5.55];
+  const gainSyms  = ["FPS", "CRDO", "COHR", "SPCX", "UMC", "BE", "INTC", "DELL", "MRVL", "SMCI"];
+  const lossSyms  = ["ON", "FANG", "CHYM", "CRCL", "OXY", "COP", "PR", "DVN", "RBLX", "HBAN"];
+  const gainNames = ["FPS Forgent Power(電力設備)", "CRDO Credo(半導體)", "COHR 高意(光通訊)", "SPCX SpaceX(太空)", "UMC 聯電(半導體)", "BE Bloom Energy(燃料電池)", "INTC 英特爾(半導體)", "DELL 戴爾(大型科技)", "MRVL 邁威爾(半導體)", "SMCI 超微電腦(大型科技)"];
+  const lossNames = ["ON 安森美(半導體)", "FANG", "CHYM Chime(金融科技)", "CRCL Circle(加密貨幣)", "OXY 西方石油(能源)", "COP 康菲石油(能源)", "PR Permian(能源)", "DVN 德文能源(能源)", "RBLX Roblox(遊戲)", "HBAN"];
+  const XMAX = 13;
+
+  // 在每根長條末端畫上美股代碼：漲幅在條右側、跌幅在條左側
+  const symbolLabels = {
+    id: 'symbolLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      ctx.save();
+      ctx.font = '600 11px "Microsoft JhengHei", "Segoe UI", sans-serif';
+      ctx.textBaseline = 'middle';
+      chart.data.datasets.forEach((ds, di) => {
+        const meta = chart.getDatasetMeta(di);
+        meta.data.forEach((bar, i) => {
+          const v = ds.data[i];
+          if (v === null || v === undefined) return;
+          const sym = di === 0 ? gainSyms[i] : lossSyms[i];
+          ctx.fillStyle = ds.backgroundColor;
+          if (v >= 0) { ctx.textAlign = 'left';  ctx.fillText(sym, bar.x + 4, bar.y); }
+          else        { ctx.textAlign = 'right'; ctx.fillText(sym, bar.x - 4, bar.y); }
+        });
+      });
+      ctx.restore();
+    }
+  };
+
+  new Chart(document.getElementById('bar'), {
+    type: 'bar',
+    data: {
+      labels: ranks,
+      datasets: [
+        { label: '漲幅', data: gainVals, backgroundColor: '#d32f2f',   borderRadius: 3 },
+        { label: '跌幅', data: lossVals, backgroundColor: '#2e7d32', borderRadius: 3 }
+      ]
+    },
+    plugins: [symbolLabels],
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: function(items) {
+              const it = items[0];
+              return (it.datasetIndex === 0 ? gainNames : lossNames)[it.dataIndex];
+            },
+            label: function(ctx) { const v = ctx.parsed.x; return (v >= 0 ? '▲' : '▼') + Math.abs(v).toFixed(2) + '%'; }
+          }
+        }
+      },
+      scales: {
+        x: { min: -XMAX, max: XMAX, stacked: true,
+              ticks: { callback: function(v) { return Math.abs(v) + '%'; } }, grid: { color: '#eee' } },
+        y: { stacked: true, title: { display: true, text: '排名', color: '#888', font: { size: 11 } },
+              ticks: { font: { size: 12, weight: '600' } }, grid: { display: false } }
+      }
+    }
+  });
+</script>
+</body>
+</html>
