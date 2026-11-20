@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>持股市值分佈 2026-11-19</title>
+<title>持股市值分佈 2026-11-20</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   * { box-sizing: border-box; }
@@ -43,7 +43,7 @@
 <body>
 <div class="wrap">
   <h1>持股市值分佈</h1>
-  <div class="sub">資料日期：2026-11-19　|　總市值：74,081,150</div>
+  <div class="sub">資料日期：2026-11-20　|　總市值：57,948,600</div>
 
   <div class="card">
     <div class="chart-box"><canvas id="pie"></canvas></div>
@@ -56,10 +56,10 @@
         <tr><th>商品</th><th class="num">市值</th><th class="num">平均成本</th><th class="num">浮動損益</th><th class="num">佔比</th></tr>
       </thead>
       <tbody>
-        <tr><td class="name"><span class="dot" style="background:#4e79a7"></span>台耀期126<span class="lots">16 口</span></td><td class="num">24,480,000</td><td class="num">817.70</td><td class="num neg">-1,686,339</td><td class="num">33.04%</td></tr><tr><td class="name"><span class="dot" style="background:#f28e2b"></span>小型台指126<span class="lots">11 口</span></td><td class="num">22,166,650</td><td class="num">40,294.55</td><td class="num pos">+4,650</td><td class="num">29.92%</td></tr><tr><td class="name"><span class="dot" style="background:#e15759"></span>臻鼎KY期126<span class="lots">16 口</span></td><td class="num">12,320,000</td><td class="num">390.01</td><td class="num neg">-160,320</td><td class="num">16.63%</td></tr><tr><td class="name"><span class="dot" style="background:#76b7b2"></span>聯電期126<span class="lots">60 口</span></td><td class="num">11,244,000</td><td class="num">94.63</td><td class="num neg">-111,804</td><td class="num">15.18%</td></tr><tr><td class="name"><span class="dot" style="background:#59a14f"></span>全新期126<span class="lots">3 口</span></td><td class="num">1,962,000</td><td class="num">334.65</td><td class="num neg">-45,900</td><td class="num">2.65%</td></tr><tr><td class="name"><span class="dot" style="background:#edc948"></span>小型信驊期126<span class="lots">1 口</span></td><td class="num">968,500</td><td class="num">9,935.00</td><td class="num neg">-25,000</td><td class="num">1.31%</td></tr><tr><td class="name"><span class="dot" style="background:#b07aa1"></span>穩懋期126<span class="lots">1 口</span></td><td class="num">940,000</td><td class="num">503.00</td><td class="num neg">-66,000</td><td class="num">1.27%</td></tr>
+        <tr><td class="name"><span class="dot" style="background:#4e79a7"></span>台耀期126<span class="lots">16 口</span></td><td class="num">22,112,000</td><td class="num">817.70</td><td class="num neg">-4,054,339</td><td class="num">38.16%</td></tr><tr><td class="name"><span class="dot" style="background:#f28e2b"></span>小型台指126<span class="lots">11 口</span></td><td class="num">21,247,600</td><td class="num">40,294.55</td><td class="num neg">-914,400</td><td class="num">36.67%</td></tr><tr><td class="name"><span class="dot" style="background:#e15759"></span>臻鼎KY期126<span class="lots">16 口</span></td><td class="num">11,104,000</td><td class="num">390.01</td><td class="num neg">-1,376,320</td><td class="num">19.16%</td></tr><tr><td class="name"><span class="dot" style="background:#76b7b2"></span>全新期126<span class="lots">3 口</span></td><td class="num">1,767,000</td><td class="num">334.65</td><td class="num neg">-240,900</td><td class="num">3.05%</td></tr><tr><td class="name"><span class="dot" style="background:#59a14f"></span>小型信驊期126<span class="lots">1 口</span></td><td class="num">872,000</td><td class="num">9,935.00</td><td class="num neg">-121,500</td><td class="num">1.50%</td></tr><tr><td class="name"><span class="dot" style="background:#edc948"></span>穩懋期126<span class="lots">1 口</span></td><td class="num">846,000</td><td class="num">503.00</td><td class="num neg">-160,000</td><td class="num">1.46%</td></tr>
       </tbody>
       <tfoot>
-        <tr><td>總計</td><td class="num">74,081,150</td><td class="num">—</td><td class="num neg">-2,090,713</td><td class="num">100.00%</td></tr>
+        <tr><td>總計</td><td class="num">57,948,600</td><td class="num">—</td><td class="num neg">-6,867,459</td><td class="num">100.00%</td></tr>
       </tfoot>
     </table>
     </div>
@@ -67,9 +67,9 @@
 </div>
 
 <script>
-  const labels = ["台耀期126", "小型台指126", "臻鼎KY期126", "聯電期126", "全新期126", "小型信驊期126", "穩懋期126"];
-  const values = [24480000.0, 22166650.0, 12320000.0, 11244000.0, 1962000.0, 968500.0, 940000.0];
-  const colors = ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f", "#edc948", "#b07aa1"];
+  const labels = ["台耀期126", "小型台指126", "臻鼎KY期126", "全新期126", "小型信驊期126", "穩懋期126"];
+  const values = [22112000.0, 21247600.0, 11104000.0, 1767000.0, 872000.0, 846000.0];
+  const colors = ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f", "#edc948"];
   const total = values.reduce((a, b) => a + b, 0);
   const isNarrow = window.matchMedia('(max-width: 600px)').matches;
   new Chart(document.getElementById('pie'), {
