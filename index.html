@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>持股市值分佈 2026-11-26</title>
+<title>持股市值分佈 2026-11-27</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   * { box-sizing: border-box; }
@@ -43,7 +43,7 @@
 <body>
 <div class="wrap">
   <h1>持股市值分佈</h1>
-  <div class="sub">資料日期：2026-11-26　|　總市值：49,504,300</div>
+  <div class="sub">資料日期：2026-11-27　|　總市值：45,510,500</div>
 
   <div class="card">
     <div class="chart-box"><canvas id="pie"></canvas></div>
@@ -56,10 +56,10 @@
         <tr><th>商品</th><th class="num">市值</th><th class="num">平均成本</th><th class="num">浮動損益</th><th class="num">佔比</th></tr>
       </thead>
       <tbody>
-        <tr><td class="name"><span class="dot" style="background:#4e79a7"></span>台燿期126<span class="lots">13 口</span></td><td class="num">19,240,000</td><td class="num">817.70</td><td class="num neg">-2,020,200</td><td class="num">38.87%</td></tr><tr><td class="name"><span class="dot" style="background:#f28e2b"></span>小型台指126<span class="lots">9 口</span></td><td class="num">16,507,800</td><td class="num">40,234.44</td><td class="num neg">-1,597,700</td><td class="num">33.35%</td></tr><tr><td class="name"><span class="dot" style="background:#e15759"></span>臻鼎KY期126<span class="lots">16 口</span></td><td class="num">10,400,000</td><td class="num">390.01</td><td class="num neg">-2,080,320</td><td class="num">21.01%</td></tr><tr><td class="name"><span class="dot" style="background:#76b7b2"></span>全新期126<span class="lots">3 口</span></td><td class="num">1,680,000</td><td class="num">334.65</td><td class="num neg">-327,900</td><td class="num">3.39%</td></tr><tr><td class="name"><span class="dot" style="background:#59a14f"></span>小型信驊期126<span class="lots">1 口</span></td><td class="num">868,500</td><td class="num">9,935.00</td><td class="num neg">-125,000</td><td class="num">1.75%</td></tr><tr><td class="name"><span class="dot" style="background:#edc948"></span>穩懋期126<span class="lots">1 口</span></td><td class="num">808,000</td><td class="num">503.00</td><td class="num neg">-198,000</td><td class="num">1.63%</td></tr>
+        <tr><td class="name"><span class="dot" style="background:#4e79a7"></span>台耀期126<span class="lots">11 口</span></td><td class="num">17,600,000</td><td class="num">817.70</td><td class="num neg">-389,400</td><td class="num">38.67%</td></tr><tr><td class="name"><span class="dot" style="background:#f28e2b"></span>小型台指126<span class="lots">8 口</span></td><td class="num">15,732,000</td><td class="num">40,202.50</td><td class="num neg">-349,000</td><td class="num">34.57%</td></tr><tr><td class="name"><span class="dot" style="background:#e15759"></span>臻鼎KY期126<span class="lots">12 口</span></td><td class="num">8,568,000</td><td class="num">390.01</td><td class="num neg">-792,240</td><td class="num">18.83%</td></tr><tr><td class="name"><span class="dot" style="background:#76b7b2"></span>全新期126<span class="lots">3 口</span></td><td class="num">1,773,000</td><td class="num">334.65</td><td class="num neg">-234,900</td><td class="num">3.90%</td></tr><tr><td class="name"><span class="dot" style="background:#59a14f"></span>小型信驊期126<span class="lots">1 口</span></td><td class="num">949,500</td><td class="num">9,935.00</td><td class="num neg">-44,000</td><td class="num">2.09%</td></tr><tr><td class="name"><span class="dot" style="background:#edc948"></span>穩懋期126<span class="lots">1 口</span></td><td class="num">888,000</td><td class="num">503.00</td><td class="num neg">-118,000</td><td class="num">1.95%</td></tr>
       </tbody>
       <tfoot>
-        <tr><td>總計</td><td class="num">49,504,300</td><td class="num">—</td><td class="num neg">-6,349,120</td><td class="num">100.00%</td></tr>
+        <tr><td>總計</td><td class="num">45,510,500</td><td class="num">—</td><td class="num neg">-1,927,540</td><td class="num">100.00%</td></tr>
       </tfoot>
     </table>
     </div>
@@ -67,8 +67,8 @@
 </div>
 
 <script>
-  const labels = ["台燿期126", "小型台指126", "臻鼎KY期126", "全新期126", "小型信驊期126", "穩懋期126"];
-  const values = [19240000.0, 16507800.0, 10400000.0, 1680000.0, 868500.0, 808000.0];
+  const labels = ["台耀期126", "小型台指126", "臻鼎KY期126", "全新期126", "小型信驊期126", "穩懋期126"];
+  const values = [17600000.0, 15732000.0, 8568000.0, 1773000.0, 949500.0, 888000.0];
   const colors = ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f", "#edc948"];
   const total = values.reduce((a, b) => a + b, 0);
   const isNarrow = window.matchMedia('(max-width: 600px)').matches;
